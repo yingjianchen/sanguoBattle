@@ -1,0 +1,61 @@
+{
+  "1": {
+    "skill_id": 1,
+    "effect_type": 1,
+    "activate_time": 7,
+    "target_type": 1,
+    "target_position": 3,
+    "target_count": 0,
+    "round_keep": 0,
+    "add_skill_id": 0,
+    "img_id": 1003,
+    "animation_id": 1001,
+    "value_type": 1,
+    "value": 195,
+    "name": "雷电术(进场)",
+    "activate_desc": 0,
+    "description": "给对格武将造成%s%的伤害。",
+    "hero_round": 0,
+    "magic_type": 1,
+
+
+
+    "attack_type": 1//物理攻击，法术攻击
+    "attack_times" : 3 //该技能攻击次数，多数技能默认是1，连击类需要此字段
+    "buff": [
+        {
+            "buff_id" : 123,
+            "damage_type" : 1,//伤害系数：百分比，实际值
+            "attack_scope" : 1 //攻击范围： 全体，单体，对面加两侧
+            "rate": 100 //触发概率50%
+
+            "target_type" : 1 //buff释放目标是敌方还是己方
+        },
+        {
+            "buff_id" : 456,
+            "damage_type" : 1,
+            "attack_scope" : 1,
+            "rate": 50 //触发概率50%
+        }
+    ]
+  },
+
+  //buff
+  {
+    "123" :
+    {
+        "id" : 123,
+        "desc" : "对武将造成法术伤害",
+        "class_name" : "DamageBuff",
+        "duration" : 0 //持续回合 -1：永久
+    },
+    "456" :
+    {
+        "id" : 456,
+        "desc" : "对武将造成灼烧效果",
+        "class_name" : "BurnBuff",
+        "duration" : -1 //持续回合 -1：永久
+    }
+  }
+
+
